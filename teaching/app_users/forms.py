@@ -27,5 +27,5 @@ class UserProfileInfoForm(forms.ModelForm):
     user_type = forms.ChoiceField(required=True, choices=user_types)
 
     class Meta():
-        model = UserPrfileInfo
+        model = UserProfileInfo
         fields = ('bio', 'profile_pic', 'user_type')

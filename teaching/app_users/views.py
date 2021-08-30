@@ -1,16 +1,17 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from app_users.forms import UserForm, UserProfileInfoForm
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def index(request):
-    return HttpResponse("This is Home Page")
+    return render(request, 'home.html')
 
 def register(request):
 
-    registered = Flase
+    registered = False
 
     if request.method == "POST":
         user_form = UserForm(data=request.POST)
@@ -60,3 +61,4 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
+

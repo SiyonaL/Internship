@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>HOME</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <a href="{% url 'index' %}"> Home </a>
+                <a href="{% url 'user_login' %}"> Login </a>
+                <a href="{% url 'register' %}"> Register </a>
+                <a href="{% url 'user_logout' %}"> Logout </a>
+                <h1>This is Home Page</h1>
+                {% block content %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
